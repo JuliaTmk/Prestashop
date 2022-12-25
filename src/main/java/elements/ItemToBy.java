@@ -13,24 +13,18 @@ public class ItemToBy {
 
     protected WebDriver driver = DriverSingleton.getInstance().getDriver();
     private final static int WAIT_TIMEOUT_SECONDS = 30;
-    private static final String BUTTON_XPATH = "//a[@title='%s']/ancestor::div[@class='right-block']//a[@title='Add to cart']";
-    private static final String ELEMENT_XPATH = "//a[@title='%s']";
-    private String label;
+    //private static final String BUTTON_XPATH = "//a[@title='%s']/ancestor::div[@class='right-block']//a[@title='Add to cart']";
+    private static final String ITEM_XPATH = "(//a[@title='%s'])[2]";
+    private String itemLabel;
 
-   // public AddToCartButton(String label) {
-  //      this.label = label;
-  //  }
+    public ItemToBy(String itemLabel) {
+        this.itemLabel = itemLabel;
+    }
 
-   /* public void addItemToTheCart(){
-        Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(By.xpath(String.format(ELEMENT_XPATH,label)))).click().build();
-        //driver.findElement((By.xpath(String.format(BUTTON_XPATH,label)))).click();
-    } */
-
-    public void addItemToTheCart(){
-        Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(By.xpath("(//a[@title='Faded Short Sleeve T-shirts'])[2]"))).click().build();
-        //driver.findElement((By.xpath(String.format(BUTTON_XPATH,label)))).click();
+    public void ClickItemToBy(){
+        new WebDriverWait (driver, Duration.ofSeconds(WAIT_TIMEOUT_SECONDS))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(ITEM_XPATH,itemLabel))))
+                .click();
     }
 
 

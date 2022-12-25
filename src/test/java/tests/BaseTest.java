@@ -1,4 +1,4 @@
-package prestashop.tests;
+package tests;
 
 import driver.DriverSingleton;
 import org.openqa.selenium.WebDriver;
@@ -9,13 +9,14 @@ public class BaseTest {
 
     protected WebDriver driver;
 
+
     @BeforeClass
     public void startBrowser() {
-        driver = DriverSingleton.getDriver();
+        driver = DriverSingleton.getInstance().getDriver();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void stopBrowser() {
-        DriverSingleton.closeDriver();
-    }
+    //@AfterClass(alwaysRun = true)
+   // public void stopBrowser() {
+   //     DriverSingleton.getInstance().closeDriver();
+   // }
 }
