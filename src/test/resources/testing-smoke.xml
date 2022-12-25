@@ -5,9 +5,11 @@
 
 
 
-    <test name="Cart Page Test">
+
+
+    <test name="Login Page Test">
         <classes>
-            <class name="tests.CartPageTest"></class>
+            <class name="tests.LoginPageTest"></class>
         </classes>
     </test>
 

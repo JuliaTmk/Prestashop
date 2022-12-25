@@ -34,4 +34,12 @@ public class CartPageTest extends BaseTest {
         Assert.assertTrue(cartPageService.removeItemFromTheCart());
     }
 
+    /*<test name="Cart Page Test">
+        <classes>
+            <class name="tests.CartPageTest"></class>
+        </classes>
+    </test>
+
+     */
+
 }
