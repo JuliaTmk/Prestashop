@@ -26,8 +26,4 @@ public class MyAccountPage extends BasePage {
         waitElementToBeClickable(womenItemsButton).click();
     }
 
-
-
-
-
 }

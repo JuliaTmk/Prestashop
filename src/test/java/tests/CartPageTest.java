@@ -9,9 +9,8 @@ import services.WomenItemsPageService;
 public class CartPageTest extends BaseTest {
 
     private CartPageService cartPageService = new CartPageService();
-    private CartPage cartPage;
 
-    @Test(priority = 1)
+    @Test(priority = 1, alwaysRun = true)
     public void addItemToTheCartTest() {
         String selectedItemLabel = "Faded Short Sleeve T-shirts";
         String actualItemLabel = cartPageService.addItemToTheCart(selectedItemLabel);
@@ -39,6 +38,8 @@ public class CartPageTest extends BaseTest {
             <class name="tests.CartPageTest"></class>
         </classes>
     </test>
+
+    parallel="classes"
 
      */
 

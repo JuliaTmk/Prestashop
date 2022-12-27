@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="Test suite" parallel="classes">
+<suite thread-count="2" name="Test suite" parallel="classes" >
 
     <test name="Login Page Test">
         <classes>
             <class name="tests.LoginPageTest"></class>
+        </classes>
+    </test>
+
+    <test name="Women Items Page Test">
+        <classes>
+            <class name="tests.WomenItemsPageTest"></class>
+        </classes>
+    </test>
+
+    <test name="Cart Page Test">
+        <classes>
+            <class name="tests.CartPageTest"></class>
+        </classes>
+    </test>
+
+    <test name="Address Page Test">
+        <classes>
+            <class name="tests.AddressPageTest"></class>
+        </classes>
+    </test>
+
+    <test name="Checkout Order Page Test">
+        <classes>
+            <class name="tests.CheckoutOrderPageTest"></class>
         </classes>
     </test>
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 @Log4j2
 public class CartPage extends BasePage {
 
-    @FindBy(xpath = "//i[@class='icon-trash']")
+    @FindBy(xpath = "//a[@title='Delete']")
     private WebElement deleteFromCartButton;
 
     @FindBy(xpath = "//p[@class='product-name']//following-sibling::a")
@@ -34,6 +34,7 @@ public class CartPage extends BasePage {
 
     public CartPage clickOnDeleteFromCartButton(){
         log.info("Delete item from the cart");
+        deleteFromCartButton.click();
         deleteFromCartButton.click();
         driver.navigate().refresh();
         return this;
@@ -66,7 +67,5 @@ public class CartPage extends BasePage {
         }
         return this;
     }
-
-
 
 }

@@ -1,5 +1,6 @@
 package services;
 
+import io.qameta.allure.Step;
 import pages.CartPage;
 
 
@@ -7,6 +8,7 @@ public class CartPageService {
 
     protected static CartPage cartPage;
 
+    @Step("Adding item to the cart")
     public String addItemToTheCart(String itemLabel) {
         WomenItemsPageService womenItemsPageService = new WomenItemsPageService();
         return womenItemsPageService.openWomenItemsPage()
@@ -17,11 +19,13 @@ public class CartPageService {
                 .getTextOfAddedToTheCartItem();
     }
 
+    @Step("Removing item from the cart")
     public boolean removeItemFromTheCart() {
         return cartPage.clickOnDeleteFromCartButton()
                 .alertEmptyCartIsVisible();
     }
 
+    @Step("Calculate price for several items in the chart")
     public double calculatePriceForSeveralItems(int itemQuantity) {
         cartPage = new CartPage();
         double itemPrice;

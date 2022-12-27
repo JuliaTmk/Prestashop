@@ -24,7 +24,26 @@ public class WomenItemsPage extends BasePage {
     @FindBy(xpath = "//span[@class='continue btn btn-default button exclusive-medium']")
     private WebElement continueShoppingButton;
 
+    @FindBy(xpath = "//a[@class='open-comment-form']")
+    private WebElement commentField;
 
+    @FindBy(xpath = "//input[@id='comment_title']")
+    private WebElement commentTitle;
+
+    @FindBy(xpath = "//textarea[@id='content']")
+    private WebElement commentContent;
+
+    @FindBy(xpath = "//button[@id='submitNewMessage']")
+    private WebElement sendCommentButton;
+
+    @FindBy(xpath = "//div[@class='fancybox-skin']//h2[contains(text(), 'Новый')]")
+    private WebElement successCommentMessage;
+
+    public WomenItemsPage openPage(String url) {
+        log.info("Open women items page by URL");
+        driver.get(url);
+        return this;
+    }
 
     public String getTextOfTitleOfWomenItemsPage() {
         log.info("Getting title of women items page");
@@ -60,9 +79,32 @@ public class WomenItemsPage extends BasePage {
         return this;
     }
 
+    public WomenItemsPage clickCommentField(){
+        log.info("Clicking on the comment field");
+        waitElementToBeClickable(commentField).click();
+        return this;
+    }
 
+    public WomenItemsPage inputCommentTitle(String commentTitleText){
+        log.info("Inputting comment title");
+        waitVisibilityOf(commentTitle).sendKeys(commentTitleText);
+        return this;
+    }
 
+    public WomenItemsPage inputCommentContent(String commentContentText){
+        log.info("Inputting comment content");
+        waitVisibilityOf(commentContent).sendKeys(commentContentText);
+        return this;
+    }
 
+    public WomenItemsPage clickSendCommentButton() {
+        log.info("Clicking on the send comment button");
+        waitVisibilityOf(sendCommentButton).click();
+        return this;
+    }
 
+    public String getTextOfSuccessCommentMessage() {
+        return waitVisibilityOf(successCommentMessage).getText();
+    }
 
 }

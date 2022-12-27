@@ -1,14 +1,25 @@
 package tests;
 
+import model.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import services.LoginPageService;
 import services.WomenItemsPageService;
+
+import static services.WomenItemsPageService.EXPECTED_SUCCESS_COMMENT_MESSAGE_TEXT;
 
 public class WomenItemsPageTest extends BaseTest {
 
     private WomenItemsPageService womenItemsPageService = new WomenItemsPageService();
 
-    @Test(priority = 1)
+    @BeforeClass
+    public void login() {
+        LoginPageService loginPageService = new LoginPageService();
+        User user = new User();
+        loginPageService.login(user);
+    }
+    @Test(priority = 1, alwaysRun = true)
     public void openWomenItemsPageTest() {
         String expectedTextOfWomenItemsPage = "WOMEN";
         String actualTextOfWomenItemsPage = womenItemsPageService.openWomenItemsPage()
@@ -23,6 +34,15 @@ public class WomenItemsPageTest extends BaseTest {
         String actualItemLabel = womenItemsPageService.selectItemToBy(selectedItemLabel);
         Assert.assertEquals(actualItemLabel,selectedItemLabel,
                 "The actual title of the item does not match expected!");
+    }
+
+    @Test(priority = 3)
+    public void leftCommentTest() {
+        String commentTitle = "Good";
+        String commentContent = "I like this!";
+        String actualSendCommentMessage = womenItemsPageService.leftComment(commentTitle,commentContent);
+        Assert.assertEquals(actualSendCommentMessage,EXPECTED_SUCCESS_COMMENT_MESSAGE_TEXT,
+                "The actual text of the message does not match expected!");
     }
 
     /*
