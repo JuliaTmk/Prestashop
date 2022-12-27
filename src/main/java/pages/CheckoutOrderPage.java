@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 @Log4j2
 public class CheckoutOrderPage extends BasePage {
 
-    @FindBy(xpath = "//a[@title = 'Proceed to checkout']/span") ////button[@name='processAddress']
+    @FindBy(xpath = "//a[@title = 'Proceed to checkout']/span")
     private WebElement proceedToCheckoutButton;
 
     @FindBy(xpath = "//button[@name='processAddress']")

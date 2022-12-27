@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class User {
 
-    private String email = "eesok@mailto.plus";
+    private String email = "uuguo@mailto.plus";
     private String password = "beenie11";
 
     public User() {

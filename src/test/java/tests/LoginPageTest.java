@@ -20,11 +20,4 @@ public class LoginPageTest extends BaseTest {
                 "The actual title of the page does not match expected!");
     }
 
-    /*
-     <test name="Login Page Test">
-        <classes>
-            <class name="tests.LoginPageTest"></class>
-        </classes>
-    </test>
-     */
 }

@@ -45,13 +45,4 @@ public class WomenItemsPageTest extends BaseTest {
                 "The actual text of the message does not match expected!");
     }
 
-    /*
-    <test name="Women Items Page Test">
-        <classes>
-            <class name="tests.WomenItemsPageTest"></class>
-        </classes>
-    </test>
-     */
-
-
 }

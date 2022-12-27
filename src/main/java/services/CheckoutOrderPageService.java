@@ -25,7 +25,7 @@ public class CheckoutOrderPageService {
         checkoutOrderPage.clickOnOrderConfirmationButton();
     }
 
-    @Step("Getting text of order4 confirmation message")
+    @Step("Getting text of order confirmation message")
     public String getTextOfOrderConfirmationMessage() {
         return checkoutOrderPage.getTextOfOrderConfirmationMessage();
     }

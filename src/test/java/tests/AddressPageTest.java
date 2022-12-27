@@ -35,11 +35,4 @@ public class AddressPageTest extends BaseTest {
         Assert.assertTrue(actualMessageOfPageAfterDeleteAddress.contains(expectedMessageOfPageAfterDeleteAddress), "The actual message of the page does not match expected!");
     }
 
-    /*  <test name="Address Page Test">
-        <classes>
-            <class name="tests.AddressPageTest"></class>
-        </classes>
-    </test>
-
-     */
 }
