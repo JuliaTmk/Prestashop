@@ -6,7 +6,7 @@ import pages.CartPage;
 
 public class CartPageService {
 
-    protected static CartPage cartPage;
+    private CartPage cartPage;
 
     @Step("Adding item to the cart")
     public String addItemToTheCart(String itemLabel) {

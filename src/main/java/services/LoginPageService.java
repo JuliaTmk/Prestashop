@@ -8,7 +8,7 @@ import pages.MyAccountPage;
 public class LoginPageService {
 
     public static final String LOGIN_PAGE_URL = "http://prestashop.qatestlab.com.ua/ru/authentication?back=my-account";
-    protected static LoginPage loginPage;
+    private static LoginPage loginPage;
 
 
     @Step("Log in and open MyAccount Page")

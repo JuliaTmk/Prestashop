@@ -11,9 +11,7 @@ import static model.Address.ADDRESS_PAGE_URL;
 
 public class AddressPageService {
 
-    protected static AddressPage addressPage;
-
-    Alert alert;
+    private AddressPage addressPage;
 
     @Step("Creating address")
     public void createYourAddress() {
@@ -46,7 +44,7 @@ public class AddressPageService {
     public void deleteAddress() {
         addressPage.openPage(ADDRESSES_PAGE_URL)
                 .clickDeleteAddressButton();
-        alert = DriverSingleton.getInstance().getDriver().switchTo().alert();
+        Alert alert = DriverSingleton.getInstance().getDriver().switchTo().alert();
         alert.accept();
     }
 

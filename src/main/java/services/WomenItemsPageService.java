@@ -6,9 +6,8 @@ import pages.WomenItemsPage;
 
 public class WomenItemsPageService {
 
-    protected static WomenItemsPage womenItemsPage;
+    private static WomenItemsPage womenItemsPage;
     public static final String WOMEN_ITEMS_PAGE_URL = "http://prestashop.qatestlab.com.ua/ru/3-women";
-
     public static final String EXPECTED_SUCCESS_COMMENT_MESSAGE_TEXT = "Новый комментарий";
 
     @Step("Open page with woman items")
