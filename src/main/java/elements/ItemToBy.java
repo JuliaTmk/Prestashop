@@ -10,9 +10,9 @@ import java.time.Duration;
 
 public class ItemToBy {
 
-    protected WebDriver driver = DriverSingleton.getInstance().getDriver();
-    private final static int WAIT_TIMEOUT_SECONDS = 30;
+    private static final int WAIT_TIMEOUT_SECONDS = 30;
     private static final String ITEM_XPATH = "(//a[@title='%s'])[2]";
+    private WebDriver driver = DriverSingleton.getInstance().getDriver();
     private String itemLabel;
 
     public ItemToBy(String itemLabel) {

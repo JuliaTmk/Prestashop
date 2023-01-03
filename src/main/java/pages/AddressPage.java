@@ -32,6 +32,12 @@ public class AddressPage extends BasePage {
     @FindBy(xpath = "//select[@id='id_state']//parent::div")
     private WebElement stateDropDown;
 
+    @FindBy(xpath = "//select[@id='id_country']//option[@value='216']")
+    private WebElement countyID;
+
+    @FindBy(xpath = "//select[@id='id_state']//option[@value='321']")
+    private WebElement stateID;
+
 
     public AddressPage openPage(String url) {
         log.info("Open address page by URL");
@@ -82,7 +88,6 @@ public class AddressPage extends BasePage {
     }
 
     public AddressPage chooseACountry() {
-        WebElement countyID = driver.findElement(By.xpath("//select[@id='id_country']//option[@value='216']"));
         log.info("Choosing a country");
         waitVisibilityOf(countryDropDown).click();
         countyID.click();
@@ -91,7 +96,6 @@ public class AddressPage extends BasePage {
 
 
     public AddressPage chooseAState() {
-        WebElement stateID = driver.findElement(By.xpath("//select[@id='id_state']//option[@value='321']"));
         log.info("Choosing a state");
         waitVisibilityOf(stateDropDown).click();
         stateID.click();

@@ -10,11 +10,10 @@ import java.time.Duration;
 
 public class InputField {
 
-    protected WebDriver driver = DriverSingleton.getInstance().getDriver();
-
     private static final String INPUT_XPATH = "//input[@id='%s']";
-    private final static int WAIT_TIMEOUT_SECONDS = 30;
+    private static final int WAIT_TIMEOUT_SECONDS = 30;
     private final String label;
+    private WebDriver driver = DriverSingleton.getInstance().getDriver();
 
 
     public InputField(String label) {

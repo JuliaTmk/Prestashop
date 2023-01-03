@@ -21,9 +21,4 @@ public class MyAccountPage extends BasePage {
         return titleOfMyAccountPage.getText();
     }
 
-    public void clickOnWomenItemsPageButton(){
-        log.info("Clicking on the women assortment button");
-        waitElementToBeClickable(womenItemsButton).click();
-    }
-
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
-    public WebDriverFactory() {
+    private WebDriverFactory() {
     }
 
     public static WebDriver getWebDriver() {
@@ -24,7 +24,6 @@ public class WebDriverFactory {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--incognito");
                driver = new ChromeDriver(chromeOptions);
-                //driver = new ChromeDriver();
             }
         }
         driver.manage().window().maximize();

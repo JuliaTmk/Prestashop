@@ -6,12 +6,12 @@ import pages.WomenItemsPage;
 
 public class WomenItemsPageService {
 
-    private static WomenItemsPage womenItemsPage;
     public static final String WOMEN_ITEMS_PAGE_URL = "http://prestashop.qatestlab.com.ua/ru/3-women";
     public static final String EXPECTED_SUCCESS_COMMENT_MESSAGE_TEXT = "Новый комментарий";
+    private WomenItemsPage womenItemsPage;
 
     @Step("Open page with woman items")
-    public static WomenItemsPage openWomenItemsPage() {
+    public WomenItemsPage openWomenItemsPage() {
         womenItemsPage = new WomenItemsPage();
         womenItemsPage.openPage(WOMEN_ITEMS_PAGE_URL);
         return new WomenItemsPage();

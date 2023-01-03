@@ -8,11 +8,11 @@ import pages.MyAccountPage;
 public class LoginPageService {
 
     public static final String LOGIN_PAGE_URL = "http://prestashop.qatestlab.com.ua/ru/authentication?back=my-account";
-    private static LoginPage loginPage;
+    private LoginPage loginPage;
 
 
     @Step("Log in and open MyAccount Page")
-    public static MyAccountPage login(User user) {
+    public MyAccountPage login(User user) {
         loginPage = new LoginPage();
         loginPage.openPage(LOGIN_PAGE_URL)
                 .fillInEmailField(user.getEmail())
