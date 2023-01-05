@@ -26,7 +26,7 @@ public class CartPageTest extends BaseTest {
         Assert.assertEquals(finalCalculatedPrice,expectedFinalPrice);
     }
 
-    @Test(priority = 3, enabled = false)
+    @Test(priority = 3)
     public void deletingItemFromTheCartTest() {
         Assert.assertTrue(cartPageService.removeItemFromTheCart());
     }
