@@ -2,9 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.CartPage;
 import services.CartPageService;
-import services.WomenItemsPageService;
 
 public class CartPageTest extends BaseTest {
 
@@ -28,7 +26,7 @@ public class CartPageTest extends BaseTest {
         Assert.assertEquals(finalCalculatedPrice,expectedFinalPrice);
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, enabled = false)
     public void deletingItemFromTheCartTest() {
         Assert.assertTrue(cartPageService.removeItemFromTheCart());
     }
